@@ -1,0 +1,1229 @@
+<!--ME costo mucho :v xd-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comandos - Kaede Club</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0b0f19;
+            color: #e2e8f0;
+        }
+        .glass-card {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body class="min-h-screen py-10 px-4 sm:px-6 lg:px-8">
+
+    <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-10">
+            <span class="text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20 font-semibold">
+                Lista de comandos (227)
+            </span>
+            <h1 class="text-4xl font-extrabold mt-4 mb-2 tracking-tight text-white">
+                Kaede <span class="text-purple-400">Comandos</span>
+            </h1>
+            <p class="text-gray-400 text-sm max-w-md mx-auto">
+                Explora todas las categorías, herramientas y funciones disponibles para tu diversión en WhatsApp.
+            </p>
+        </div>
+
+        <div class="mb-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div class="relative w-full max-w-md">
+                <input type="text" id="searchInput" placeholder="Busca un comando (ej. #hug, #kick, #ping)..." 
+                    class="w-full px-4 py-3 rounded-xl glass-card text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 transition-all text-sm shadow-lg">
+            </div>
+            
+            <button id="nsfwToggleBtn" onclick="toggleNsfw()" class="w-full sm:w-auto px-4 py-3 rounded-xl glass-card text-gray-400 border border-red-500/20 hover:border-red-500/40 transition-all text-xs font-semibold flex items-center justify-center gap-2 shadow-lg">
+                <span id="nsfwDot" class="w-2 h-2 rounded-full bg-gray-500"></span>
+                <span>Mostrar NSFW</span>
+            </button>
+        </div>
+
+
+        <div class="flex flex-wrap justify-center gap-2 mb-8" id="categoryFilters">
+            <button onclick="filterCategory('all', this)" class="cat-btn px-4 py-2 rounded-lg text-xs font-semibold bg-purple-600 text-white transition-all shadow-md">Todo</button>
+            <button onclick="filterCategory('economia', this)" class="cat-btn px-4 py-2 rounded-lg text-xs font-semibold glass-card text-gray-300 hover:text-white transition-all">Economía</button>
+            <button onclick="filterCategory('sockets', this)" class="cat-btn px-4 py-2 rounded-lg text-xs font-semibold glass-card text-gray-300 hover:text-white transition-all">Sockets</button>
+            <button onclick="filterCategory('stickers', this)" class="cat-btn px-4 py-2 rounded-lg text-xs font-semibold glass-card text-gray-300 hover:text-white transition-all">Stickers</button>
+            <button onclick="filterCategory('downloads', this)" class="cat-btn px-4 py-2 rounded-lg text-xs font-semibold glass-card text-gray-300 hover:text-white transition-all">Downloads</button>
+            <button onclick="filterCategory('gacha', this)" class="cat-btn px-4 py-2 rounded-lg text-xs font-semibold glass-card text-gray-300 hover:text-white transition-all">Gacha</button>
+            <button onclick="filterCategory('anime', this)" class="cat-btn px-4 py-2 rounded-lg text-xs font-semibold glass-card text-gray-300 hover:text-white transition-all">Anime</button>
+            <button onclick="filterCategory('grupo', this)" class="cat-btn px-4 py-2 rounded-lg text-xs font-semibold glass-card text-gray-300 hover:text-white transition-all">Grupo</button>
+            <button onclick="filterCategory('profile', this)" class="cat-btn px-4 py-2 rounded-lg text-xs font-semibold glass-card text-gray-300 hover:text-white transition-all">Profile</button>
+            <button onclick="filterCategory('utils', this)" class="cat-btn px-4 py-2 rounded-lg text-xs font-semibold glass-card text-gray-300 hover:text-white transition-all">Utils</button>
+        </div>
+
+        <div class="space-y-6" id="commandsContainer">
+            
+            <div class="command-section space-y-4" data-category="economia">
+                <div class="glass-card rounded-2xl p-6 shadow-xl border-l-4 border-purple-500 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                    <div>
+                        <h2 class="text-lg font-bold text-white flex items-center gap-2">
+                            <span>ꕤ</span> Economy
+                        </h2>
+                        <p class="text-gray-400 text-xs mt-1">Comandos de economía para ganar dinero y divertirte con tus amigos.</p>
+                    </div>
+                    <span class="category-count text-xs font-semibold px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 w-fit">
+                        13 comandos
+                    </span>
+                </div>
+                <div class="grid gap-3 sm:grid-cols-2">
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-purple-400 font-mono text-xs font-bold">#balance » #bal » #coins [@mencion]</code>
+                        <p class="text-gray-400 text-xs mt-1">Ver cuántas coins tienes.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-purple-400 font-mono text-xs font-bold">#w » #work » #trabajar</code>
+                        <p class="text-gray-400 text-xs mt-1">Ganar coins trabajando.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-purple-400 font-mono text-xs font-bold">#slut » #protituirse</code>
+                        <p class="text-gray-400 text-xs mt-1">Ganar coins prostituyéndote.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-purple-400 font-mono text-xs font-bold">#coinflip » #flip » #cf + [cara/cruz]</code>
+                        <p class="text-gray-400 text-xs mt-1">Apostar coins en un cara o cruz.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-purple-400 font-mono text-xs font-bold">#crime » #crimen</code>
+                        <p class="text-gray-400 text-xs mt-1">Ganar coins rápido.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-purple-400 font-mono text-xs font-bold">#roulette » rt + [red/black] [cantidad]</code>
+                        <p class="text-gray-400 text-xs mt-1">Apostar coins en una ruleta.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-purple-400 font-mono text-xs font-bold">#deposit » #dep » #d [cantidad] || all</code>
+                        <p class="text-gray-400 text-xs mt-1">Depositar tus coins en el banco.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-purple-400 font-mono text-xs font-bold">#with » #withdraw » #retirar [cantidad] || all</code>
+                        <p class="text-gray-400 text-xs mt-1">Retirar tus coins en el banco.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-purple-400 font-mono text-xs font-bold">#einfo » #economyinfo » #infoeconomy</code>
+                        <p class="text-gray-400 text-xs mt-1">Ver tu informacion de economia en el grupo.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-purple-400 font-mono text-xs font-bold">#givecoins » #pay » #coinsgive [usuario] [cantidad]</code>
+                        <p class="text-gray-400 text-xs mt-1">Dar coins a un usuario.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-purple-400 font-mono text-xs font-bold">#daily » #diario</code>
+                        <p class="text-gray-400 text-xs mt-1">Reclamar tu recompensa diaria.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-purple-400 font-mono text-xs font-bold">#steal » #robar » #rob [Mencion || citar]</code>
+                        <p class="text-gray-400 text-xs mt-1">Intentar robar coins a un usuario.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-purple-400 font-mono text-xs font-bold">#economyboard » #eboard » #baltop [página]</code>
+                        <p class="text-gray-400 text-xs mt-1">Ver el ranking de usuarios con más coins.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="command-section space-y-4" data-category="stickers">
+                <div class="glass-card rounded-2xl p-6 shadow-xl border-l-4 border-pink-500 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                    <div>
+                        <h2 class="text-lg font-bold text-white flex items-center gap-2">
+                            <span>ꕤ</span> STICKERS
+                        </h2>
+                        <p class="text-gray-400 text-xs mt-1">Comandos para crear y gestionar paquetes de stickers.</p>
+                    </div>
+                    <span class="category-count text-xs font-semibold px-2.5 py-1 rounded-full bg-pink-500/10 text-pink-400 border border-pink-500/20 w-fit">
+                        14 comandos
+                    </span>
+                </div>
+                <div class="grid gap-3 sm:grid-cols-2">
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800 relative flex flex-col justify-between">
+                        <span class="absolute top-3 right-3 text-[10px] font-bold px-2 py-0.5 rounded-full bg-yellow-500/10 text-yellow-400 border border-yellow-500/20">Bot premium</span>
+                        <div>
+                            <code class="text-pink-400 font-mono text-xs font-bold">#delpack [nombre]</code>
+                            <p class="text-gray-400 text-xs mt-1">Elimina un paquete de stickers.</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800 relative flex flex-col justify-between">
+                        <span class="absolute top-3 right-3 text-[10px] font-bold px-2 py-0.5 rounded-full bg-yellow-500/10 text-yellow-400 border border-yellow-500/20">Bot premium</span>
+                        <div>
+                            <code class="text-pink-400 font-mono text-xs font-bold">#delstickermeta » #delmeta</code>
+                            <p class="text-gray-400 text-xs mt-1">Restablecer el pack y autor por defecto.</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800 relative flex flex-col justify-between">
+                        <span class="absolute top-3 right-3 text-[10px] font-bold px-2 py-0.5 rounded-full bg-yellow-500/10 text-yellow-400 border border-yellow-500/20">Bot premium</span>
+                        <div>
+                            <code class="text-pink-400 font-mono text-xs font-bold">#getpack » #pack [nombre]</code>
+                            <p class="text-gray-400 text-xs mt-1">Descarga un paquete de stickers.</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800 relative flex flex-col justify-between">
+                        <span class="absolute top-3 right-3 text-[10px] font-bold px-2 py-0.5 rounded-full bg-yellow-500/10 text-yellow-400 border border-yellow-500/20">Bot premium</span>
+                        <div>
+                            <code class="text-pink-400 font-mono text-xs font-bold">#newpack » #newstickerpack [nombre]</code>
+                            <p class="text-gray-400 text-xs mt-1">Crea un nuevo paquete de stickers.</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800 relative flex flex-col justify-between">
+                        <span class="absolute top-3 right-3 text-[10px] font-bold px-2 py-0.5 rounded-full bg-yellow-500/10 text-yellow-400 border border-yellow-500/20">Bot premium</span>
+                        <div>
+                            <code class="text-pink-400 font-mono text-xs font-bold">#setpackprivate [nombre]</code>
+                            <p class="text-gray-400 text-xs mt-1">Establecer pack como privado.</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800 relative flex flex-col justify-between">
+                        <span class="absolute top-3 right-3 text-[10px] font-bold px-2 py-0.5 rounded-full bg-yellow-500/10 text-yellow-400 border border-yellow-500/20">Bot premium</span>
+                        <div>
+                            <code class="text-pink-400 font-mono text-xs font-bold">#setpackpublic [nombre]</code>
+                            <p class="text-gray-400 text-xs mt-1">Establecer pack como público.</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-pink-400 font-mono text-xs font-bold">#setstickermeta » #setmeta</code>
+                        <p class="text-gray-400 text-xs mt-1">Definir pack y autor por defecto.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800 relative flex flex-col justify-between">
+                        <span class="absolute top-3 right-3 text-[10px] font-bold px-2 py-0.5 rounded-full bg-yellow-500/10 text-yellow-400 border border-yellow-500/20">Bot premium</span>
+                        <div>
+                            <code class="text-pink-400 font-mono text-xs font-bold">#setpackdesc [nombre] | [desc]</code>
+                            <p class="text-gray-400 text-xs mt-1">Establece la descripción de un pack.</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-pink-400 font-mono text-xs font-bold">#sticker » #s [paquete] | [autor]</code>
+                        <p class="text-gray-400 text-xs mt-1">Convertir imagen/video a sticker.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800 relative flex flex-col justify-between">
+                        <span class="absolute top-3 right-3 text-[10px] font-bold px-2 py-0.5 rounded-full bg-yellow-500/10 text-yellow-400 border border-yellow-500/20">Bot premium</span>
+                        <div>
+                            <code class="text-pink-400 font-mono text-xs font-bold">#stickeradd [nombre]</code>
+                            <p class="text-gray-400 text-xs mt-1">Agrega un sticker citado a un paquete.</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800 relative flex flex-col justify-between">
+                        <span class="absolute top-3 right-3 text-[10px] font-bold px-2 py-0.5 rounded-full bg-yellow-500/10 text-yellow-400 border border-yellow-500/20">Bot premium</span>
+                        <div>
+                            <code class="text-pink-400 font-mono text-xs font-bold">#stickerdel [nombre]</code>
+                            <p class="text-gray-400 text-xs mt-1">Elimina un sticker citado de un paquete.</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800 relative flex flex-col justify-between">
+                        <span class="absolute top-3 right-3 text-[10px] font-bold px-2 py-0.5 rounded-full bg-yellow-500/10 text-yellow-400 border border-yellow-500/20">Bot premium</span>
+                        <div>
+                            <code class="text-pink-400 font-mono text-xs font-bold">#stickerpacks » #packlist</code>
+                            <p class="text-gray-400 text-xs mt-1">Lista de tus paquetes de stickers.</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800 relative flex flex-col justify-between">
+                        <span class="absolute top-3 right-3 text-[10px] font-bold px-2 py-0.5 rounded-full bg-yellow-500/10 text-yellow-400 border border-yellow-500/20">Bot premium</span>
+                        <div>
+                            <code class="text-pink-400 font-mono text-xs font-bold">#stickerpack » #spack [query]</code>
+                            <p class="text-gray-400 text-xs mt-1">Busca y descarga packs de stickers.</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-pink-400 font-mono text-xs font-bold">#wm [nombre/autor]</code>
+                        <p class="text-gray-400 text-xs mt-1">Cambia la marca de agua.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="command-section space-y-4" data-category="gacha">
+                <div class="glass-card rounded-2xl p-6 shadow-xl border-l-4 border-amber-500 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                    <div>
+                        <h2 class="text-lg font-bold text-white flex items-center gap-2">
+                            <span>ꕤ</span> GACHA
+                        </h2>
+                        <p class="text-gray-400 text-xs mt-1">Comandos de gacha para reclamar e intercambiar personajes.</p>
+                    </div>
+                    <span class="category-count text-xs font-semibold px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 w-fit">
+                        22 comandos
+                    </span>
+                </div>
+                <div class="grid gap-3 sm:grid-cols-2">
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-amber-400 font-mono text-xs font-bold">#buycharacter » #buyc [nombre]</code>
+                        <p class="text-gray-400 text-xs mt-1">Comprar un personaje en venta.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-amber-400 font-mono text-xs font-bold">#charimage » #wimage [nombre]</code>
+                        <p class="text-gray-400 text-xs mt-1">Ver una imagen aleatoria de un personaje.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-amber-400 font-mono text-xs font-bold">#charinfo » #winfo [nombre]</code>
+                        <p class="text-gray-400 text-xs mt-1">Ver información de un personaje.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-amber-400 font-mono text-xs font-bold">#charvideo » #wvideo [nombre]</code>
+                        <p class="text-gray-400 text-xs mt-1">Ver un video aleatorio de un personaje.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-amber-400 font-mono text-xs font-bold">#claim » #c {citar personaje}</code>
+                        <p class="text-gray-400 text-xs mt-1">Reclamar un personaje.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-amber-400 font-mono text-xs font-bold">#delclaimmsg » #delclaim</code>
+                        <p class="text-gray-400 text-xs mt-1">Restablecer el mensaje de reclamo.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-amber-400 font-mono text-xs font-bold">#deletewaifu » #delchar [nombre]</code>
+                        <p class="text-gray-400 text-xs mt-1">Eliminar un personaje reclamado.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-amber-400 font-mono text-xs font-bold">#favoritetop » #favtop</code>
+                        <p class="text-gray-400 text-xs mt-1">Ver el top de personajes favoritos.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-amber-400 font-mono text-xs font-bold">#gachainfo » #ginfo</code>
+                        <p class="text-gray-400 text-xs mt-1">Ver tu información de gacha.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-amber-400 font-mono text-xs font-bold">#giveallharem [@mencion]</code>
+                        <p class="text-gray-400 text-xs mt-1">Regalar todos tus personajes a otro usuario.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-amber-400 font-mono text-xs font-bold">#givechar » #regalar [@mención] [nombre]</code>
+                        <p class="text-gray-400 text-xs mt-1">Regalar un personaje a otro usuario.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-amber-400 font-mono text-xs font-bold">#harem » #waifus [@mencion] | [página]</code>
+                        <p class="text-gray-400 text-xs mt-1">Ver tus personajes reclamados.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-amber-400 font-mono text-xs font-bold">#haremshop » #wshop [página]</code>
+                        <p class="text-gray-400 text-xs mt-1">Ver los personajes en venta.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-amber-400 font-mono text-xs font-bold">#removesale » #removerventa [nombre]</code>
+                        <p class="text-gray-400 text-xs mt-1">Eliminar un personaje en venta.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-amber-400 font-mono text-xs font-bold">#rollwaifu » #rw</code>
+                        <p class="text-gray-400 text-xs mt-1">Waifu o husbando aleatorio.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-amber-400 font-mono text-xs font-bold">#sell » #vender [precio] [nombre]</code>
+                        <p class="text-gray-400 text-xs mt-1">Poner un personaje en venta.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-amber-400 font-mono text-xs font-bold">#serieinfo » #animeinfo [nombre] | {page=número}</code>
+                        <p class="text-gray-400 text-xs mt-1">información de un anime.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-amber-400 font-mono text-xs font-bold">#serielist » #animelist [página]</code>
+                        <p class="text-gray-400 text-xs mt-1">Listar series del bot.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-amber-400 font-mono text-xs font-bold">#setclaim » #setclaimmsg [mensaje]</code>
+                        <p class="text-gray-400 text-xs mt-1">Modificar el mensaje al reclamar un personaje.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-amber-400 font-mono text-xs font-bold">#trade » #intercambiar [tu personaje] / [personaje2]</code>
+                        <p class="text-gray-400 text-xs mt-1">intercambiar un personaje con otro usuario.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-amber-400 font-mono text-xs font-bold">#vote » #votar [nombre]</code>
+                        <p class="text-gray-400 text-xs mt-1">Votar por un personaje para subir valor.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-amber-400 font-mono text-xs font-bold">#waifusboard » #wtop [página]</code>
+                        <p class="text-gray-400 text-xs mt-1">Ver el top de personajes con mayor valor.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="command-section space-y-4" data-category="downloads">
+                <div class="glass-card rounded-2xl p-6 shadow-xl border-l-4 border-emerald-500 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                    <div>
+                        <h2 class="text-lg font-bold text-white flex items-center gap-2">
+                            <span>ꕤ</span> DOWNLOADS
+                        </h2>
+                        <p class="text-gray-400 text-xs mt-1">Comandos de descargas para descargar archivos de varias fuentes.</p>
+                    </div>
+                    <span class="category-count text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 w-fit">
+                        13 comandos
+                    </span>
+                </div>
+                <div class="grid gap-3 sm:grid-cols-2">
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-emerald-400 font-mono text-xs font-bold">#facebook » #fb + [link]</code>
+                        <p class="text-gray-400 text-xs mt-1">Descargar un video de Facebook.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-emerald-400 font-mono text-xs font-bold">#hitomi » #hitomila + [enlace | código]</code>
+                        <p class="text-gray-400 text-xs mt-1">Descargar una galería como PDF dde HitomiLA.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-emerald-400 font-mono text-xs font-bold">#mediafire » #mf + [link | búsqueda]</code>
+                        <p class="text-gray-400 text-xs mt-1">Descargar o buscar un archivo de mediafire.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-emerald-400 font-mono text-xs font-bold">#mp4 » #ytmp4 + [búsqueda | link]</code>
+                        <p class="text-gray-400 text-xs mt-1">Descargar o buscar un video de Youtube.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-emerald-400 font-mono text-xs font-bold">#tiktok » #tt + [link]</code>
+                        <p class="text-gray-400 text-xs mt-1">Descargar un video de TikTok.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-emerald-400 font-mono text-xs font-bold">#tiktoks » #tts + [búsqueda]</code>
+                        <p class="text-gray-400 text-xs mt-1">Buscar videos de TikTok.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-emerald-400 font-mono text-xs font-bold">#play » #ytmp3 + [búsqueda | link]</code>
+                        <p class="text-gray-400 text-xs mt-1">Descargar o buscar un audio de YouTube.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-emerald-400 font-mono text-xs font-bold">#pinterest » #pin [búsqueda | enlace]</code>
+                        <p class="text-gray-400 text-xs mt-1">Buscar una imagen o un video en Pinterest, o descargar pin por su link.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-emerald-400 font-mono text-xs font-bold">#reel » #ig + [link]</code>
+                        <p class="text-gray-400 text-xs mt-1">Descargar un reel o una foto de Instragram.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-emerald-400 font-mono text-xs font-bold">#twitter » #x + [link]</code>
+                        <p class="text-gray-400 text-xs mt-1">Descargar los videos y las imágenes de un post de Twitter/X.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-emerald-400 font-mono text-xs font-bold">#ytsearch » #search + [búsqueda]</code>
+                        <p class="text-gray-400 text-xs mt-1">Buscar videos de Youtube.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-emerald-400 font-mono text-xs font-bold">#apk + [búsqueda]</code>
+                        <p class="text-gray-400 text-xs mt-1">Descargar una APK de Aptoide.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-emerald-400 font-mono text-xs font-bold">#drive » #gdrive + [link]</code>
+                        <p class="text-gray-400 text-xs mt-1">Descargar un archivo de Google Drive.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="command-section space-y-4" data-category="profile">
+                <div class="glass-card rounded-2xl p-6 shadow-xl border-l-4 border-cyan-500 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                    <div>
+                        <h2 class="text-lg font-bold text-white flex items-center gap-2">
+                            <span>👤</span> PROFILE
+                        </h2>
+                        <p class="text-gray-400 text-xs mt-1">Comandos de perfil para ver y configurar tu perfil.</p>
+                    </div>
+                    <span class="category-count text-xs font-semibold px-2.5 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 w-fit">
+                        14 comandos
+                    </span>
+                </div>
+                <div class="grid gap-3 sm:grid-cols-2">
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-cyan-400 font-mono text-xs font-bold">#allbirthdays » #allbirths</code>
+                        <p class="text-gray-400 text-xs mt-1">Ver todos los cumpleaños.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-cyan-400 font-mono text-xs font-bold">#birthdays » #births</code>
+                        <p class="text-gray-400 text-xs mt-1">Ver cumpleaños cercanos en el grupo.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-cyan-400 font-mono text-xs font-bold">#delbirth</code>
+                        <p class="text-gray-400 text-xs mt-1">Borrar tu fecha de cumpleaños.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-cyan-400 font-mono text-xs font-bold">#delfavourite » #delfav</code>
+                        <p class="text-gray-400 text-xs mt-1">Eliminar tu personaje reclamado favorito.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-cyan-400 font-mono text-xs font-bold">#delgenre</code>
+                        <p class="text-gray-400 text-xs mt-1">Eliminar tu género.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-cyan-400 font-mono text-xs font-bold">#divorce</code>
+                        <p class="text-gray-400 text-xs mt-1">Divorciarte de tu pareja.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-cyan-400 font-mono text-xs font-bold">#leaderboard » #lboard [página]</code>
+                        <p class="text-gray-400 text-xs mt-1">Top de usarios con más experencia.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-cyan-400 font-mono text-xs font-bold">#level » #lvl [@mencion]</code>
+                        <p class="text-gray-400 text-xs mt-1">Ver tu nivel y experiencia.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-cyan-400 font-mono text-xs font-bold">#marry » #casarse [@mencion]</code>
+                        <p class="text-gray-400 text-xs mt-1">Casarte con alguien.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-cyan-400 font-mono text-xs font-bold">#profile [@mencion]</code>
+                        <p class="text-gray-400 text-xs mt-1">Ver tu perfil.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-cyan-400 font-mono text-xs font-bold">#setbirth [fecha]</code>
+                        <p class="text-gray-400 text-xs mt-1">Establecer tu fecha de cumpleaños.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-cyan-400 font-mono text-xs font-bold">#setdescription » #setdesc [descripción]</code>
+                        <p class="text-gray-400 text-xs mt-1">Establecer tu descripción.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-cyan-400 font-mono text-xs font-bold">#setfavourite » #setfav [nombre]</code>
+                        <p class="text-gray-400 text-xs mt-1">Establecer tu personaje reclamado como favorito.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-cyan-400 font-mono text-xs font-bold">#setgenre [hombre | mujer]</code>
+                        <p class="text-gray-400 text-xs mt-1">Establecer tu género.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="command-section space-y-4" data-category="sockets">
+                <div class="glass-card rounded-2xl p-6 shadow-xl border-l-4 border-blue-500 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                    <div>
+                        <h2 class="text-lg font-bold text-white flex items-center gap-2">
+                            <span>ꕤ</span> SOCKETS
+                        </h2>
+                        <p class="text-gray-400 text-xs mt-1">Comandos para registrar tu propio bot.</p>
+                    </div>
+                    <span class="category-count text-xs font-semibold px-2.5 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 w-fit">
+                        15 comandos
+                    </span>
+                </div>
+                <div class="grid gap-3 sm:grid-cols-2">
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-blue-400 font-mono text-xs font-bold">#botinfo » #infobot</code>
+                        <p class="text-gray-400 text-xs mt-1">Obtener información del bot.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-blue-400 font-mono text-xs font-bold">#join [enlace]</code>
+                        <p class="text-gray-400 text-xs mt-1">Unir el bot a un grupo.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-blue-400 font-mono text-xs font-bold">#leave » #salir</code>
+                        <p class="text-gray-400 text-xs mt-1">Salir de un grupo.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-blue-400 font-mono text-xs font-bold">#code » #qr</code>
+                        <p class="text-gray-400 text-xs mt-1">Crea un socket con un código QR/Code.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-blue-400 font-mono text-xs font-bold">#codepremium » #qrpremium [token]</code>
+                        <p class="text-gray-400 text-xs mt-1">Registrar un bot premium con código QR o de Vinculación.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-blue-400 font-mono text-xs font-bold">#reload</code>
+                        <p class="text-gray-400 text-xs mt-1">Recargar la sesión del bot.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-blue-400 font-mono text-xs font-bold">#setbanner {enviar o citar imagen/video}</code>
+                        <p class="text-gray-400 text-xs mt-1">Cambiar el banner del bot.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-blue-400 font-mono text-xs font-bold">#setname [corto] / [largo]</code>
+                        <p class="text-gray-400 text-xs mt-1">Cambia el nombre de tu socket.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-blue-400 font-mono text-xs font-bold">#setcurrency » #setbotcurrency [nombre]</code>
+                        <p class="text-gray-400 text-xs mt-1">Cambiar la moneda del bot.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-blue-400 font-mono text-xs font-bold">#setowner » #setbotowner [@mencion | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Cambiar el dueño del bot.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-blue-400 font-mono text-xs font-bold">#setpfp {enviar o citar imagen}</code>
+                        <p class="text-gray-400 text-xs mt-1">Cambiar la foto de perfil del bot.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-blue-400 font-mono text-xs font-bold">#self</code>
+                        <p class="text-gray-400 text-xs mt-1">Poner en modo privado el bot.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-blue-400 font-mono text-xs font-bold">#setstatus [estado]</code>
+                        <p class="text-gray-400 text-xs mt-1">Cambiar el estado del bot.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-blue-400 font-mono text-xs font-bold">#setusername [nombre]</code>
+                        <p class="text-gray-400 text-xs mt-1">Cambiar el nombre del usuario de bot.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-blue-400 font-mono text-xs font-bold">#logout</code>
+                        <p class="text-gray-400 text-xs mt-1">Cierra sesión del socket.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="command-section space-y-4" data-category="utils">
+                <div class="glass-card rounded-2xl p-6 shadow-xl border-l-4 border-teal-500 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                    <div>
+                        <h2 class="text-lg font-bold text-white flex items-center gap-2">
+                            <span>ꕤ</span> UTILS
+                        </h2>
+                        <p class="text-gray-400 text-xs mt-1">Comandos de Utilidades para el dia a dia del bot.</p>
+                    </div>
+                    <span class="category-count text-xs font-semibold px-2.5 py-1 rounded-full bg-teal-500/10 text-teal-400 border border-teal-500/20 w-fit">
+                        15 comandos
+                    </span>
+                </div>
+                <div class="grid gap-3 sm:grid-cols-2">
+                    <div class="relative bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <span class="absolute top-2 right-2 text-red-500 text-[10px] font-bold">NO DISPONIBLE POR EL MOMENTO</span>
+                        <code class="text-teal-400 font-mono text-xs font-bold">#setlang » #lang [codigo]</code>
+                        <p class="text-gray-400 text-xs mt-1">Cambiar el idioma en el que te responde el bot.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-teal-400 font-mono text-xs font-bold">#bots » #sockets</code>
+                        <p class="text-gray-400 text-xs mt-1">Ver el número de bots activos.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-teal-400 font-mono text-xs font-bold">#del » #delete {citar mensaje}</code>
+                        <p class="text-gray-400 text-xs mt-1">Eliminar un mensaje.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-teal-400 font-mono text-xs font-bold">#getpic » #pfp [@mencion | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Ver la foto de perfil de un usuario.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-teal-400 font-mono text-xs font-bold">#invite [enlace de invitación]</code>
+                        <p class="text-gray-400 text-xs mt-1">Inivitar el bot a un grupo.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-teal-400 font-mono text-xs font-bold">#menu » #help [categoría]</code>
+                        <p class="text-gray-400 text-xs mt-1">Ver el menú de comandos.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-teal-400 font-mono text-xs font-bold">#ping » #p</code>
+                        <p class="text-gray-400 text-xs mt-1">Medir el tiempo de respuesta del bot.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-teal-400 font-mono text-xs font-bold">#status</code>
+                        <p class="text-gray-400 text-xs mt-1">Ver el estado del bot.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-teal-400 font-mono text-xs font-bold">#report » #suggest » #addanime [texto]</code>
+                        <p class="text-gray-400 text-xs mt-1">Solicitar un anime/serie/juego o personaje faltante, o reportar un error.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-teal-400 font-mono text-xs font-bold">#testwelcome » #testgoodbye</code>
+                        <p class="text-gray-400 text-xs mt-1">Probar el mensaje de bienvenida/despedida.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-teal-400 font-mono text-xs font-bold">#toimg » #toimage {citar sticker o imagen}</code>
+                        <p class="text-gray-400 text-xs mt-1">Convertir un sticker a imagen.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-teal-400 font-mono text-xs font-bold">#fake » #fakemsg [{citar un mensaje} | texto]</code>
+                        <p class="text-gray-400 text-xs mt-1">Crea un mensaje falso de la persona citada.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-teal-400 font-mono text-xs font-bold">#games [opcion]</code>
+                        <p class="text-gray-400 text-xs mt-1">Crear una nueva partida de un juego.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-teal-400 font-mono text-xs font-bold">#get [link]</code>
+                        <p class="text-gray-400 text-xs mt-1">Hacerle una solicitud a una pagina web.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-teal-400 font-mono text-xs font-bold">#translate » #traducir [idioma] | [texto]</code>
+                        <p class="text-gray-400 text-xs mt-1">Traduce un texto al idioma deseado.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="command-section space-y-4" data-category="grupo">
+                <div class="glass-card rounded-2xl p-6 shadow-xl border-l-4 border-indigo-500 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                    <div>
+                        <h2 class="text-lg font-bold text-white flex items-center gap-2">
+                            <span>ꕤ</span> GRUPO
+                        </h2>
+                        <p class="text-gray-400 text-xs mt-1">Comandos para administradores de grupos.</p>
+                    </div>
+                    <span class="category-count text-xs font-semibold px-2.5 py-1 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 w-fit">
+                        27 comandos
+                    </span>
+                </div>
+                <div class="grid gap-3 sm:grid-cols-2">
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-indigo-400 font-mono text-xs font-bold">#alerts » #alertas + [on/off]</code>
+                        <p class="text-gray-400 text-xs mt-1">Activar/desactivar las alertas de cambios de administrador.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-indigo-400 font-mono text-xs font-bold">#antilink » #antienlace + [on/off]</code>
+                        <p class="text-gray-400 text-xs mt-1">Activar/desactivar el antilink.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-indigo-400 font-mono text-xs font-bold">#antistatus + [on/off]</code>
+                        <p class="text-gray-400 text-xs mt-1">Activar/desactivar el antistatus.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-indigo-400 font-mono text-xs font-bold">#bot + [on/off]</code>
+                        <p class="text-gray-400 text-xs mt-1">Activar/desactivar al bot.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-indigo-400 font-mono text-xs font-bold">#close</code>
+                        <p class="text-gray-400 text-xs mt-1">Cerrar el grupo (solo administradores pueden escribir).</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-indigo-400 font-mono text-xs font-bold">#delwarn + [@mencion | {citar mensaje}] [número]</code>
+                        <p class="text-gray-400 text-xs mt-1">Eliminar una advertencia de un usuario.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-indigo-400 font-mono text-xs font-bold">#demote [@mencion | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Degradar a un administrador del grupo.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-indigo-400 font-mono text-xs font-bold">#economy » #economia + [on/off]</code>
+                        <p class="text-gray-400 text-xs mt-1">Activar/desactivar los comandos de economia.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-indigo-400 font-mono text-xs font-bold">#gacha + [on/off]</code>
+                        <p class="text-gray-400 text-xs mt-1">Activar/desactivar los comandos gacha.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-indigo-400 font-mono text-xs font-bold">#goodbye » #despedida + [on/off]</code>
+                        <p class="text-gray-400 text-xs mt-1">Activar/desactivar el mensaje de despedida.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-indigo-400 font-mono text-xs font-bold">#gpimg » #setgpbanner + [enviar o citar imagen]</code>
+                        <p class="text-gray-400 text-xs mt-1">Cambiar la imagen del grupo.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-indigo-400 font-mono text-xs font-bold">#kick + [@mencion | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Expulsar a un usuario del grupo.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-indigo-400 font-mono text-xs font-bold">#msgcount » #count » #mensajes + [@mencion | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Ver el conteo de mensajes de un usuario.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-indigo-400 font-mono text-xs font-bold">#nsfw + [on/off]</code>
+                        <p class="text-gray-400 text-xs mt-1">Activar/desactivar los comandos NSFW.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-indigo-400 font-mono text-xs font-bold">#onlyadmin + [on/off]</code>
+                        <p class="text-gray-400 text-xs mt-1">Permitir que solo los administradores usen comandos.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-indigo-400 font-mono text-xs font-bold">#open</code>
+                        <p class="text-gray-400 text-xs mt-1">Abrir el grupo (todos pueden escribir).</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-indigo-400 font-mono text-xs font-bold">#promote [@mencion | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Promover a un usuario a administrador.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-indigo-400 font-mono text-xs font-bold">#setgoodbye + [texto]</code>
+                        <p class="text-gray-400 text-xs mt-1">Establecer un mensaje de despesdida personalizado.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-indigo-400 font-mono text-xs font-bold">#setprimary + [@mencion | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Establecer un bot como primario del grupo.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-indigo-400 font-mono text-xs font-bold">#setwarnlimit [cantidad]</code>
+                        <p class="text-gray-400 text-xs mt-1">Establecer el límite de advertencias antes de expulsar a un usuario.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-indigo-400 font-mono text-xs font-bold">#setwelcome + [texto]</code>
+                        <p class="text-gray-400 text-xs mt-1">Establecer un mensaje de bienvenida personalizado.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-indigo-400 font-mono text-xs font-bold">#tag » #hidetag » #tagall + [mensaje | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Enviar un mensaje mencionando a todos los usuarios del grupo.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-indigo-400 font-mono text-xs font-bold">#topcount » #topmessages » #topmsgcount + [días]]</code>
+                        <p class="text-gray-400 text-xs mt-1">Ver el top de usuarios con más mensajes.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-indigo-400 font-mono text-xs font-bold">#topinactivos » #topinactivos + [página] | [dias]</code>
+                        <p class="text-gray-400 text-xs mt-1">Ver el top de usuarios más inactivos.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-indigo-400 font-mono text-xs font-bold">#warn + [@mencion | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Dar una advertencia a un usuario del grupo.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-indigo-400 font-mono text-xs font-bold">#warns + [@mencion | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Ver todas las advertencias de un usuario.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-indigo-400 font-mono text-xs font-bold">#welcome + [on/off]</code>
+                        <p class="text-gray-400 text-xs mt-1">Activar/desactivar el mensaje de bienvenida.</p>
+                    </div>
+            </div>
+
+            <div class="command-section space-y-4" data-category="nsfw" style="display: none;">
+                <div class="glass-card rounded-2xl p-6 shadow-xl border-l-4 border-red-500 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                    <div>
+                        <h2 class="text-lg font-bold text-white flex items-center gap-2">
+                            <span>ꕤ</span> NSFW
+                        </h2>
+                        <p class="text-gray-400 text-xs mt-1">Comandos de NSFW contenido para adultos.</p>
+                    </div>
+                    <span class="category-count text-xs font-semibold px-2.5 py-1 rounded-full bg-red-500/10 text-red-400 border border-red-500/20 w-fit">
+                        34 comandos
+                    </span>
+                </div>
+                <div class="grid gap-3 sm:grid-cols-2">
+                     <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-red-400 font-mono text-xs font-bold">#rule34video + {url}</code>
+                        <p class="text-gray-400 text-xs mt-1">Descarga videos de Rule34videos.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-red-400 font-mono text-xs font-bold">#xnxx + {query|url}</code>
+                        <p class="text-gray-400 text-xs mt-1">Buscar y descarga videos de XNXX.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-red-400 font-mono text-xs font-bold">#xvideos + {query|url}</code>
+                        <p class="text-gray-400 text-xs mt-1">Buscar y descarga videos de XVideos.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-red-400 font-mono text-xs font-bold">#danbooru » #dbooru + {tag}</code>
+                        <p class="text-gray-400 text-xs mt-1">Buscar imágenes en Danbooru.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-red-400 font-mono text-xs font-bold">#gelbooru » #gbooru + {tag}</code>
+                        <p class="text-gray-400 text-xs mt-1">Buscar imágenes en Gelbooru.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-red-400 font-mono text-xs font-bold">#anal + {mencion}</code>
+                        <p class="text-gray-400 text-xs mt-1">hacer un anal</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-red-400 font-mono text-xs font-bold">#blowjob » #mamada » #bj + {mencion}</code>
+                        <p class="text-gray-400 text-xs mt-1">hacer una mamada</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-red-400 font-mono text-xs font-bold">#boobjob + {mencion}</code>
+                        <p class="text-gray-400 text-xs mt-1">hacer una rusa</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-red-400 font-mono text-xs font-bold">#bondage + {mencion}</code>
+                        <p class="text-gray-400 text-xs mt-1">Hacer un bukkake.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-red-400 font-mono text-xs font-bold">#bukkake + {mencion}</code>
+                        <p class="text-gray-400 text-xs mt-1">Atar sin escapatoria.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-red-400 font-mono text-xs font-bold">#cum + {mencion}</code>
+                        <p class="text-gray-400 text-xs mt-1">venirte en alguien</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-red-400 font-mono text-xs font-bold">#cummouth + {mencion}</code>
+                        <p class="text-gray-400 text-xs mt-1">Acabar en la boca de alguien.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-red-400 font-mono text-xs font-bold">#cumshot + {mencion}</code>
+                        <p class="text-gray-400 text-xs mt-1">Disparar semen.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-red-400 font-mono text-xs font-bold">#creampie + {mencion}</code>
+                        <p class="text-gray-400 text-xs mt-1">Dejar un creampie.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-red-400 font-mono text-xs font-bold">#deepthroat + {mencion}</code>
+                        <p class="text-gray-400 text-xs mt-1">Hacer una garganta profunda.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-red-400 font-mono text-xs font-bold">#facesitting + {mencion}</code>
+                        <p class="text-gray-400 text-xs mt-1">Sentarse en la cara de alguien.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-red-400 font-mono text-xs font-bold">#fingering + {mencion}</code>
+                        <p class="text-gray-400 text-xs mt-1">Meter los dedos.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-red-400 font-mono text-xs font-bold">#fap</code>
+                        <p class="text-gray-400 text-xs mt-1">hacerse una paja</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-red-400 font-mono text-xs font-bold">#footjob + {mencion}</code>
+                        <p class="text-gray-400 text-xs mt-1">hacer una paja con los pies</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-red-400 font-mono text-xs font-bold">#fuck » #coger + {mencion}</code>
+                        <p class="text-gray-400 text-xs mt-1">follarte a alguien</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-red-400 font-mono text-xs font-bold">#grabboobs + {mencion}</code>
+                        <p class="text-gray-400 text-xs mt-1">agarrar tetas</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-red-400 font-mono text-xs font-bold">#grop + {mencion}</code>
+                        <p class="text-gray-400 text-xs mt-1">manosear a alguien</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-red-400 font-mono text-xs font-bold">#lickass + {mencion}</code>
+                        <p class="text-gray-400 text-xs mt-1">Lamer un culo.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-red-400 font-mono text-xs font-bold">#lickdick + {mencion}</code>
+                        <p class="text-gray-400 text-xs mt-1">Lamer un pene.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-red-400 font-mono text-xs font-bold">#lickpussy + {mencion}</code>
+                        <p class="text-gray-400 text-xs mt-1">lamer un coño</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-red-400 font-mono text-xs font-bold">#rule34 » #r34 + {tags}</code>
+                        <p class="text-gray-400 text-xs mt-1">buscar imágenes en rule34</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-red-400 font-mono text-xs font-bold">#orgy » #orgia + {mencion}</code>
+                        <p class="text-gray-400 text-xs mt-1">Organizar una orgía.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-red-400 font-mono text-xs font-bold">#pegging + {mencion}</code>
+                        <p class="text-gray-400 text-xs mt-1">Dar por detrás.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-red-400 font-mono text-xs font-bold">#sixnine » #69 + {mencion}</code>
+                        <p class="text-gray-400 text-xs mt-1">hacer un 69 con alguien</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-red-400 font-mono text-xs font-bold">#spank » #nalgada + {mencion}</code>
+                        <p class="text-gray-400 text-xs mt-1">dar una nalgada</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-red-400 font-mono text-xs font-bold">#suckboobs + {mencion}</code>
+                        <p class="text-gray-400 text-xs mt-1">chupar tetas</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-red-400 font-mono text-xs font-bold">#undress » #encuerar + {mencion}</code>
+                        <p class="text-gray-400 text-xs mt-1">desnudar a alguien</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-red-400 font-mono text-xs font-bold">#thighjob + {mencion}</code>
+                        <p class="text-gray-400 text-xs mt-1">Hacer una entre piernas.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-red-400 font-mono text-xs font-bold">#yuri » #tijeras + {mencion}</code>
+                        <p class="text-gray-400 text-xs mt-1">hacer tijeras.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="command-section space-y-4" data-category="anime">
+                <div class="glass-card rounded-2xl p-6 shadow-xl border-l-4 border-rose-400 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                    <div>
+                        <h2 class="text-lg font-bold text-white flex items-center gap-2">
+                            <span>ꕤ</span> ANIME
+                        </h2>
+                        <p class="text-gray-400 text-xs mt-1">Comandos de reacciones de anime.</p>
+                    </div>
+                    <span class="category-count text-xs font-semibold px-2.5 py-1 rounded-full bg-rose-500/10 text-rose-400 border border-rose-500/20 w-fit">
+                        54 comandos
+                    </span>
+                </div>
+                <div class="grid gap-3 sm:grid-cols-2">
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#angry » #enojado + [@mención / {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Estar enojado.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#bath + [@mención / {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Bañarse.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#bite + [@mención / {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Morder a alguien.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#bleh [@mención / {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Sacar la lengua.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#blush + [@mención / {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Sonrojarse.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#bored » #aburrido + [@mención / {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Estar aburrido.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#call + [@mención / {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Llamar a alguien.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#clap » #aplaudir + [@mención / {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Aplaudir.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#coffe » #cafe + [@mención / {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Tomar café.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#cold + [@mención / {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Tener frío.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#cook + [@mención / {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Cocinal algo delicioso.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#cry + [@mención / {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Llorar por algo o alguien.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#cuddle + [@mención / {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Acurrucarse.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#dance + [@mención / {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Sacarse los pasitos prohibidos.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#dramatic + [@mención / {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Hacer drama.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#draw + [@mención / {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Dibujar.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#drunk + [@mención / {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Estar borracho.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#eat » #comer + [@mención / {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Comer algo delicioso.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#facepalm + [@mención / {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Darse una palmada en la cara.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#gaming + [@mención / {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">JUgar videjuegos.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#happy » #feliz + [@mención / {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Saltar de la felicidad.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#heat + [@mención / {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Tener calor.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#hug + [@mención / {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Dar un abrazo.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#impregnate » #preg + [@mención | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Embarazar a alguien.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#jump + [@mención | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Saltar.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#kill + [@mención | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Matar a alguien.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#kiss » #muak + [@mención | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Dar un beso.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#kisscheek » #beso + [@mención | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Dar un beso en la mejilla.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#laugh + [@mención | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Reírse algo o alguien.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#lewd + [@mención | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Hacer algo lascivo.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#lick + [@mención | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Lamer a alguien.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#love » #amor + [@mención | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Sentirse enamorado.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#nope #no + [@mención | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Negarse a hacer algo.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#pat + [@mención | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Acariciar a alguien.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#poke + [@mención | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Picar a alguien.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#pout + [@mención | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Hacer pucheros.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#psycho + [@mención | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Hacerse el psicópata.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#punch + [@mención | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Dar un puñetazo.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#push + [@mención | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Empujar a alguien.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#run + [@mención | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Correr.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#sad » #triste + [@mención | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Expresa tristeza.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#scared + [@mención | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Estar asustado.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#scream + [@mención | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">gritar.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#seduce + [@mención | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Seducir a alguien.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#shy » #timido + [@mención | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Sentir timidez.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#sing + [@mención | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Cantar.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#slap + [@mención | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Dar una bofetada.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#sleep + [@mención | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Tumbarse a dormir.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#smoke + [@mención | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Fumar.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#spit » #escupir + [@mención | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Escupir.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#step » #pisar + [@mención | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Pisar a alguien.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#think + [@mención | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Pensar en algo.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#tickle + [@mención | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Hacer cosquillas.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-3 rounded-xl border border-gray-800">
+                        <code class="text-rose-400 font-mono text-xs font-bold">#walk + [@mención | {citar mensaje}]</code>
+                        <p class="text-gray-400 text-xs mt-1">Caminar.</p>
+                    </div>
+                </div>
+            </div>
+
+</div>
+
+    <footer class="text-center mt-12 text-gray-500 text-xs">
+        <p>Made with ♥ love by Santiago.</p>
+    </footer>
+</div>
+
+<script>
+    const searchInput = document.getElementById('searchInput');
+    const sections = document.querySelectorAll('.command-section');
+    const categoryFilters = document.getElementById('categoryFilters');
+    let catButtons = document.querySelectorAll('.cat-btn');
+    let nsfwEnabled = false;
+
+    let currentCategory = 'all';
+    function toggleNsfw() {
+        nsfwEnabled = !nsfwEnabled;
+        const btn = document.getElementById('nsfwToggleBtn');
+        const dot = document.getElementById('nsfwDot');
+        let nsfwFilterBtn = document.getElementById('nsfwFilterBtn');
+        if (nsfwEnabled) {
+            btn.classList.remove('text-gray-400', 'border-red-500/20');
+            btn.classList.add('text-red-400', 'border-red-500/60', 'bg-red-500/10', 'shadow-lg');
+            dot.classList.remove('bg-gray-500');
+            dot.classList.add('bg-red-500');
+            if (!nsfwFilterBtn) {
+                nsfwFilterBtn = document.createElement('button');
+                nsfwFilterBtn.id = 'nsfwFilterBtn';
+                nsfwFilterBtn.className = 'cat-btn px-4 py-2 rounded-lg text-xs font-semibold glass-card text-gray-300 hover:text-white transition-all';
+                nsfwFilterBtn.setAttribute('onclick', "filterCategory('nsfw', this)");
+                nsfwFilterBtn.innerText = 'NSFW';
+                categoryFilters.appendChild(nsfwFilterBtn);
+            }
+        } else {
+            btn.classList.remove('text-red-400', 'border-red-500/60', 'bg-red-500/10', 'shadow-lg');
+            btn.classList.add('text-gray-400', 'border-red-500/20');
+            dot.classList.remove('bg-red-500');
+            dot.classList.add('bg-gray-500');
+
+            if (nsfwFilterBtn) {
+                nsfwFilterBtn.remove();
+            }
+            if (currentCategory === 'nsfw') {
+                const allBtn = categoryFilters.querySelector('button');
+                filterCategory('all', allBtn);
+                return;
+            }
+        }
+        applyFilters();
+    }
+    searchInput.addEventListener('input', () => {
+        applyFilters();
+    });
+
+    function filterCategory(category, clickedBtn) {
+        currentCategory = category;
+        catButtons = document.querySelectorAll('.cat-btn');
+        catButtons.forEach(btn => {
+            btn.classList.remove('bg-purple-600', 'text-white', 'shadow-md');
+            btn.classList.add('glass-card', 'text-gray-300');
+        });
+        clickedBtn.classList.remove('glass-card', 'text-gray-300');
+        clickedBtn.classList.add('bg-purple-600', 'text-white', 'shadow-md');
+
+        applyFilters();
+    }
+
+    function applyFilters() {
+        const term = searchInput.value.toLowerCase();
+        sections.forEach(section => {
+            const category = section.getAttribute('data-category');
+            const text = section.innerText.toLowerCase();
+            const isNsfw = category === 'nsfw';
+            const passesNsfwRule = !isNsfw || nsfwEnabled;
+            const passesCategoryRule = currentCategory === 'all' || category === currentCategory;
+            const passesSearchRule = text.includes(term);
+            if (passesNsfwRule && passesCategoryRule && passesSearchRule) {
+                section.style.display = 'block';
+            } else {
+                section.style.display = 'none';
+            }
+        });
+    }
+</script>
+</body>
+</html>
